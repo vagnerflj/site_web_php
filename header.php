@@ -27,17 +27,28 @@
 <body>
 
     <!-- Barra de Navegação do Sistema -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-sm bg-black navbar-dark sticky-top">
         <div class="container-fluid">
             <!-- Adicionando o logotipo como um item separado dentro do container -->
             <a href="index.php" title="Retornar à Página Inicial" class="d-flex align-items-center me-3">
-                <img src="img/bradesco.png" width="100" alt="Logo">
+                <img src="img/logo.png" width="100" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+                    <?php
+                    error_reporting(0);
+                    session_start();
+                    $idUsuario = $_SESSION["idUsuario"];
+                    $tipoUsuario = $_SESSION["tipoUsuario"];
+                    $fotoUsuario = $_SESSION["fotoUsuario"];
+                    $nomeUsuario = $_SESSION["nomeUsuario"];
+                    $emailUsuario = $_SESSION["emailUsuario"];
+                    ?>
+
+
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php" title="Ir para a Página Inicial">Home</a>
                     </li>
@@ -49,11 +60,30 @@
                     </li>
                 </ul>
             </div>
+            <?php
+                //verifica se há sessao iniciada
+                if(isset($_SESSION['logado']) && $_SESSION['logado'] == true){
+                    echo "
+                        <ul class='navbar-nav'>
+                            <li>
+                                <div class='container'>
+                                    <img src='$fotoUsuario' class='img-fluid max-height rouded' title='Esta é a sua foto de perfil'>
+                                </div>
+                            </li>
+                            <li> class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' style='color: yellow><strong>$emailUsuario</strong>'
+                                <a/>>    
+                            </li>
+                        </ul>
+                    ";
+                }
+
+            ?>
         </div>
     </nav>
     <!-- Container de Logotipo do Sistema -->
     <div class="container-fluid text-center mt-3">
-        <h1>Genérico - Sistema Web para Vendas</h1>
+        
     </div>
 
     <!-- Container PRINCIPAL do Sistema-->
