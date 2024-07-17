@@ -108,8 +108,8 @@
         //Se NÃO houver erro de preenchimento (caso a variável de controle esteja com o valor 'false')
         if(!$erroPreenchimento && !$erroUpload){
 
-            $inserirUsuario = "INSERT INTO Usuarios (fotoUsuario, nomeUsuario, cidadeUsuario, telefoneUsuario, emailUsuario, senhaUsuario, dataCadastroUsuario, horaCadastroUsuario)
-                                VALUES ('$fotoUsuario', '$nomeUsuario', '$cidadeUsuario', '$telefoneUsuario', '$emailUsuario', '$senhaUsuario', '$dataCadastroUsuario', '$horaCadastroUsuario')";
+            $inserirUsuario = "INSERT INTO Usuarios (fotoUsuario, nomeUsuario, cidadeUsuario, telefoneUsuario, emailUsuario, senhaUsuario, dataCadastroUsuario, horaCadastroUsuario, tipo, statusUsuario)
+                                VALUES ('$fotoUsuario', '$nomeUsuario', '$cidadeUsuario', '$telefoneUsuario', '$emailUsuario', '$senhaUsuario', '$dataCadastroUsuario', '$horaCadastroUsuario', 'consumidor', 'ativo')";
 
             //Inclui o código conexaoBD.php para utilizar a conexão com a base
             include("conexaoBD.php");

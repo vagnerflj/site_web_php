@@ -92,7 +92,7 @@
         if(!$erroPreenchimento && !$erroUpload){
 
             //Cria a Query para realizar a inserção das informações na tabela Produtos
-            $inserirProduto = "INSERT INTO Produtos (nomeProduto, descricaoProduto, categoriaProduto, valorProduto, condicaoProduto, dataCadastroProduto, horaCadastroProduto, statusProduto)
+            $inserirProduto = "INSERT INTO Produtos ( fotoProduto, nomeProduto, descricaoProduto, categoriaProduto, valorProduto, condicaoProduto, dataCadastroProduto, horaCadastroProduto, statusProduto)
                             VALUES ('$fotoProduto','$nomeProduto', '$descricaoProduto', '$categoriaProduto', $valorProduto, '$condicaoProduto', '$dataCadastroProduto', '$horaCadastroProduto', 'disponivel')"; 
 
             //Inclui o arquivo para conexão com o Banco de Dados
